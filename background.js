@@ -1,7 +1,7 @@
 var ext = '.jpg';
 
 chrome.runtime.onInstalled.addListener(function() {
-    console.log('MSP extension');
+    console.log('StreetView-Scrennshotter initialized.');
 });
 
 chrome.browserAction.onClicked.addListener((tab) => {
@@ -22,6 +22,7 @@ function takeScreenshot() {
                 let imageUrlWithExif = addGPSInfo(imageUrl, url);
                 
                 let filename = `${new Date().getTime()}${ext}`
+                // trigger the download
                 var hrefElement = document.createElement('a');
                 hrefElement.href = imageUrlWithExif;
                 hrefElement.download = filename;
@@ -34,7 +35,14 @@ function takeScreenshot() {
 }
 
 function addGPSInfo(imgUrl, tabUrl) {
+    // extract latitude and longitude from url params
     const urlRegex = tabUrl.match(/.*\/@(.*)\//);
+    // return original image if it's not in google map street view mode
+    if(!urlRegex)
+        return imgUrl;
+    if(urlRegex.length < 2)
+        return imgUrl;
+
     let urlGeo = urlRegex[1];
     let geoTags = urlGeo.split(',');
     let lat = geoTags[0];

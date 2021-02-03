@@ -1,7 +1,7 @@
 {
-    "name": "G-Street-View-Tool",
+    "name": "StreetView Screenshotter",
     "version": "0.1",
-    "description": "Google Map Tool",
+    "description": "Google StreetView Screenshotter with GPS",
     "background": {
         "scripts": ["piexifjs/piexif.js", "background.js", "shortcuts.js"],
         "persistent": false
@@ -9,7 +9,8 @@
     "permissions": ["activeTab"],
     "manifest_version": 2,
     "browser_action": {
-        "default_title": "Toggle the GMAP UI"
+        "default_title": "StreetView Screenshot",
+        "default_icon": "images/icon.png"
     },
     "commands": {
         "toggle-gmap-ui-block": {

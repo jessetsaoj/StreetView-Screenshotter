@@ -1,0 +1,23 @@
+{
+    "name": "G-Street-View-Tool",
+    "version": "0.1",
+    "description": "Google Map Tool",
+    "background": {
+        "scripts": ["piexifjs/piexif.js", "background.js", "shortcuts.js"],
+        "persistent": false
+    },
+    "permissions": ["activeTab"],
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "Toggle the GMAP UI"
+    },
+    "commands": {
+        "toggle-gmap-ui-block": {
+            "suggested_key": {
+                "default": "Alt+Shift+C",
+                "windows": "Alt+Shift+C"
+            },
+            "description": "Toggle Google Map UI Block"
+        }
+    }
+}

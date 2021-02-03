@@ -10,8 +10,6 @@ StreetView-Screenshotter 是一個能快速截圖Google街景圖並嵌入GPS位�
 3. 打開 `開發人員模式` 並選擇 `載入未封裝項目`
 4. 選擇剛剛複製下來的資料夾
 
-## 從Chrome線上應用程式商店安裝
-未完成
 
 ## 如何使用
 1. 瀏覽 [Google Maps](https://www.google.com/maps)
